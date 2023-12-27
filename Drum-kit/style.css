@@ -1,0 +1,38 @@
+h1 {
+    font-size: 70px;
+    text-align: center;
+    font-family: sans-serif;
+}
+button {
+    height: 170px;
+    width: 170px;
+    border-color: #008b75;
+    border-width: 7px;
+    border-style: solid;
+    margin-left: 15px;
+    font-size: xxx-large;
+    color: #ff0023;
+    font-family: cursive;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#box {
+    margin-top: 120px;
+
+}
+
+button:hover{
+    border: 10px solid #666;
+}
+
+button:active{
+    background-color: transparent;
+    border: 10px solid #666;
+    transform: translateY(4px);
+}
+.add{
+    background-color: transparent;
+    border: 10px solid #666;
+    transform: translateY(4px);
+}
