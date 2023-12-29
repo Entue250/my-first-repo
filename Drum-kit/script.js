@@ -20,7 +20,7 @@ function sounds(){
         audio.play();
     }
     else if(document.activeElement.id=="k"){
-        var audio=new Audio("Sound/virus-kick.wav");
+        var audio=new Audio("Sound/k-sound.wav");
         audio.play();
     }
 }
@@ -47,7 +47,7 @@ document.addEventListener("keypress",function(event){
         audio.play();
     }
     else if(event.key=="k"){
-        var audio=new Audio("Sound/virus-kick.wav");
+        var audio=new Audio("Sound/k-sound.wav");
         audio.play();
     }
 })
