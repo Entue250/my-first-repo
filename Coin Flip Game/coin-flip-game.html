@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coin Flip Game
+        </title>
+    </head>
+    <body>
+        <p>
+            Coin Flip Game
+        </p>
+        <button onclick="
+            const randomNumber = Math.random();
+            let computerMove = '';
+
+            if(randomNumber >= 0 && randomNumber < 1/2) {
+                computerMove = 'head';
+            }
+            else if(randomNumber >=1/2 && randomNumber <1) {
+                computerMove = 'tail';
+            }
+
+
+            let result = '';
+
+            if(computerMove ==='head'){
+                result = 'You win!.';
+            }
+            else if(computerMove ==='tail'){
+                result = 'You lose!.';
+            }
+            alert(`You picked head. Computer picked ${computerMove}. ${result}`);
+        ">Head</button>
+        <button onclick="
+            const randomNumber = Math.random();
+            let computerMove = '';
+
+            if(randomNumber >= 0 && randomNumber < 1/2) {
+                computerMove = 'head';
+            }
+            else if(randomNumber >=1/2 && randomNumber <1) {
+                computerMove = 'tail';
+            }
+
+
+            let result = '';
+
+            if(computerMove ==='head'){
+                result = 'You lose!.';
+            }
+            else if(computerMove ==='tail'){
+                result = 'You win!.';
+            }
+            alert(`You picked tail. Computer picked ${computerMove}. ${result}`);
+            ">Tail</button>
+        <button>Reset Score</button>
+    </body>
+</html>
