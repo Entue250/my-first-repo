@@ -4,106 +4,38 @@
         <title>
             Coin Flip Game
         </title>
+        <link rel="stylesheet" href="styles/coin-flip-game.css">
     </head>
     <body>
-        <p>
+        <p class="title">
             Coin Flip Game
         </p>
         <button onclick="
         
             playGame('head');
 
-        ">Head</button>
+        " class="move-button">
+            <img src="Coin-side/head.jpeg" class="move-icon">
+        </button>
         <button onclick="
 
             playGame('tail');
 
-            ">Tail</button>
+            " class="move-button">
+            <img src="Coin-side/tail.jpeg" class="move-icon">
+        </button>
 
-        <p class="js-result"></p>
+        <p class="js-result result"></p>
         <p class="js-moves"></p>
-        <p class="js-score"></p> 
+        <p class="js-score score"></p> 
 
         <button onclick="
             score.wins = 0;
             score.losses = 0;
             localStorage.removeItem('score');
             updateScoreElement();
-        ">Reset Score</button>
+        " class="reset-score-button">Reset Score</button>
 
-        <script>
-            let score = JSON.parse(localStorage.getItem('score')) ||{
-                wins: 0,
-                losses: 0,
-            };
-
-            updateScoreElement();
-
-
-            function playGame(playerMove){
-                const computerMove = pickComputerMove();
-
-                let result = '' ;
-                if (playerMove === 'tail'){
-                    if(computerMove === 'head'){
-                    result = 'You lose!.';
-                    }
-                    else if (computerMove === 'tail'){
-                        result = 'You win!.';
-                    }
-                    
-                } else if(playerMove === 'head'){
-                    if(computerMove ==='head'){
-                    result = 'You win!.';
-                    }
-                    else if(computerMove ==='tail'){
-                        result = 'You lose!.';
-                    }
-
-                } 
-
-                if (result === 'You win!.') {
-                    score.wins = score.wins + 1;
-                }
-                else if(result === 'You lose!.'){
-                    score.losses +=1;
-                }
-
-                localStorage.setItem('score', JSON.stringify(score));
-
-                updateScoreElement();
-
-                document.querySelector('.js-result')
-                    .innerHTML = result;
-
-                document.querySelector('.js-moves')
-                    .innerHTML = `You ${playerMove} - ${computerMove} Computer`;
-
-
-                // localStorage.setItem('score', JSON.stringify(score));
-
-//                 alert( `You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-// Wins: ${score.wins}, Losses: ${score.losses}`);
-            }
-
-            function updateScoreElement(){
-                document.querySelector('.js-score')
-                    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}`;
-            }
-
-            function pickComputerMove () {
-                const randomNumber = Math.random();
-
-                let computerMove = '';
-
-            if(randomNumber >=0 && randomNumber < 1/2){
-                computerMove = 'head';
-            }
-            else if (randomNumber >= 1/2 && randomNumber <1){
-                computerMove = 'tail';
-            } 
-            return computerMove;
-            }
-        </script>
+        <script src="script/coin-flip-game.js"></script>
     </body>
 </html>
