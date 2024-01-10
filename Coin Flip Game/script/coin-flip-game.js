@@ -9,29 +9,29 @@ updateScoreElement();
 function playGame(playerMove){
     const computerMove = pickComputerMove();
 
-    let result = '' ;
+    let guess = '' ;
     if (playerMove === 'tail'){
         if(computerMove === 'head'){
-        result = 'You lose!.';
+        guess = 'You lose!.';
         }
         else if (computerMove === 'tail'){
-            result = 'You win!.';
+            guess = 'You win!.';
         }
         
     } else if(playerMove === 'head'){
         if(computerMove ==='head'){
-        result = 'You win!.';
+        guess = 'You win!.';
         }
         else if(computerMove ==='tail'){
-            result = 'You lose!.';
+            guess = 'You lose!.';
         }
 
     } 
 
-    if (result === 'You win!.') {
+    if (guess === 'You win!.') {
         score.wins = score.wins + 1;
     }
-    else if(result === 'You lose!.'){
+    else if(guess === 'You lose!.'){
         score.losses +=1;
     }
 
@@ -40,7 +40,7 @@ function playGame(playerMove){
     updateScoreElement();
 
     document.querySelector('.js-result')
-        .innerHTML = result;
+        .innerHTML = guess;
 
     document.querySelector('.js-moves')
         .innerHTML = `You
