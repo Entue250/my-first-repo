@@ -94,4 +94,5 @@ btnHold.addEventListener('click', function(){
 
 });
 
+// Making again button work
 btnNew.addEventListener('click', init)
